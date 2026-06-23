@@ -4,7 +4,7 @@ from app.core.config import dbSetting
 _engine = None
 
 
-def getEngine() -> AsyncEngine:
+def get_engine() -> AsyncEngine:
     global _engine
     if _engine is None:
         url = (
