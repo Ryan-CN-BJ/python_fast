@@ -1,18 +1,22 @@
 from fastapi import FastAPI
 
-from app.core.config import webSetting, commonSetting
-
-is_production = commonSetting.enviroment == "production"
+from app.core.config import common_settings, web_settings
+from app.exception.base import BusinessException
 
 app = FastAPI(
-    title=webSetting.app_name,
-    docs_url=None if is_production else "/docs",
-    redoc_url=None if is_production else "/redoc",
-    openapi_url=None if is_production else "/openapi.json",
+    title=web_settings.app_name,
+    docs_url=None if common_settings.environment == "production" else "/docs",
+    redoc_url=None if common_settings.environment == "production" else "/redoc",
+    openapi_url=(
+        None if common_settings.environment == "production" else "/openapi.json"
+    ),
 )
 
-from .api.items import router as itemRouter
-from .api.welcome import router as welcomeRouter
+# 注册路由
+from app.api.products import router as product_router
+from app.api.categories import router as category_router
+from app.api.skus import router as sku_router
 
-app.include_router(itemRouter)
-app.include_router(welcomeRouter)
+app.include_router(product_router)
+app.include_router(category_router)
+app.include_router(sku_router)

@@ -8,3 +8,12 @@ debug:
 
 testdb:
 	PYTHONPATH=apps/web-service uv run python -m app.model.main
+
+db-migrate:
+	PYTHONPATH=apps/web-service uv run --package web-service alembic -c apps/web-service/alembic.ini revision --autogenerate -m "$(message)"
+
+db-upgrade:
+	PYTHONPATH=apps/web-service uv run --package web-service alembic -c apps/web-service/alembic.ini upgrade head
+
+db-downgrade:
+	PYTHONPATH=apps/web-service uv run --package web-service alembic -c apps/web-service/alembic.ini downgrade $(version)
