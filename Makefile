@@ -1,4 +1,4 @@
-.PHONY: dev debug testdb
+.PHONY: dev debug testdb test
 
 dev:
 	uv run --package web-service fastapi dev apps/web-service/app/main.py --port 8080
@@ -17,3 +17,6 @@ db-upgrade:
 
 db-downgrade:
 	PYTHONPATH=apps/web-service uv run --package web-service alembic -c apps/web-service/alembic.ini downgrade $(version)
+
+test:
+	uv run pytest apps/web-service/test/integration/ -v
