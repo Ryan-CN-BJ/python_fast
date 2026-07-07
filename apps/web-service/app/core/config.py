@@ -14,6 +14,8 @@ class _CommonSettings(_BaseSettingsWithEnv):
 # web服务配置
 class _WebSettings(_BaseSettingsWithEnv):
     app_name: str = "Web Service API"  # 实际读取 WEB_APP_NAME
+    cors_origins: str = ""
+    cors_expose_headers: str = ""
 
     # 配置读取方式
     model_config = {"env_prefix": "WEB_"}

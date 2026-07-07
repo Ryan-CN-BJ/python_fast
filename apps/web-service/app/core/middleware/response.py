@@ -1,0 +1,32 @@
+import json
+
+from fastapi import Request
+from fastapi.responses import JSONResponse
+
+from app.exception.not_found import NotFoundException
+
+
+async def unified_response(request: Request, call_next):
+    raise NotFoundException("资源不存在")
+    response = await call_next(request)
+
+    if not request.url.path.startswith("/api/"):
+        return response
+
+    body = b""
+    async for chunk in response.body_iterator:
+        body += chunk
+
+    headers = dict(response.headers)
+    headers.pop("content-length", None)
+
+    data = json.loads(body) if body else None
+
+    return JSONResponse(
+        content={"code": "0", "data": data, "message": "success"},
+        status_code=response.status_code,
+        headers=headers,
+    )
+
+
+MIDDLEWARE = (unified_response, {})
