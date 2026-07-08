@@ -7,7 +7,6 @@ from app.exception.not_found import NotFoundException
 
 
 async def unified_response(request: Request, call_next):
-    raise NotFoundException("资源不存在")
     response = await call_next(request)
 
     if not request.url.path.startswith("/api/"):
