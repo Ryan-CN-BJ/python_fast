@@ -142,23 +142,33 @@ async def async_client():
         yield client
 
 
-@pytest.fixture(autouse=True)
-async def cleanup_db(async_client):
-    yield
-    from sqlalchemy import text
+@pytest.fixture(scope="session")
+async def db_engine():
     from sqlalchemy.ext.asyncio import create_async_engine
     from sqlalchemy.pool import NullPool
-    from app.model.base import Base
 
     url = (
         f"postgresql+asyncpg://{db_settings.user}:{db_settings.password}"
         f"@{db_settings.host}:{db_settings.port}/{db_settings.name}"
     )
+    # 整个测试会话只创建一次引擎
     engine = create_async_engine(url, poolclass=NullPool, echo=False)
 
-    async with engine.begin() as conn:
+    yield engine
+
+    # 测试全部结束后销毁引擎
+    await engine.dispose()
+
+
+@pytest.fixture(autouse=True)
+async def cleanup_db(db_engine):
+    from sqlalchemy import text
+    from app.model.base import Base
+
+    yield
+
+    async with db_engine.begin() as conn:
         for table in reversed(Base.metadata.sorted_tables):
             await conn.execute(
                 text(f'TRUNCATE TABLE "{table.name}" RESTART IDENTITY CASCADE')
             )
-    await engine.dispose()
