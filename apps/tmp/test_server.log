@@ -1,0 +1,46 @@
+
+   FastAPI   Starting production server 🚀
+ 
+             Searching for package file structure from directories with __init__.py files
+             Importing from /Users/maorunjie/project/service-demo/apps/web-service
+ 
+    module   📁 app            
+             ├── 🐍 __init__.py
+             └── 🐍 main.py    
+ 
+      code   Importing the FastAPI app object from the module with the following code:
+ 
+             from app.main import app
+ 
+       app   Using import string: app.main:app
+ 
+      info   Configuration sources:
+              • Module: path CLI argument
+              • App name: auto-discovery
+ 
+    server   Server started at http://0.0.0.0:18000
+    server   Documentation at http://0.0.0.0:18000/docs
+ 
+             Logs:
+ 
+      INFO   Started server process [97722]
+      INFO   Waiting for application startup.
+      INFO   Application startup complete.
+      INFO   Uvicorn running on http://0.0.0.0:18000 (Press CTRL+C to quit)
+      INFO   127.0.0.1:57856 - "GET /docs HTTP/1.1" 200
+      INFO   127.0.0.1:57879 - "POST /api/categories HTTP/1.1" 201
+      INFO   127.0.0.1:57883 - "POST /api/categories HTTP/1.1" 201
+      INFO   127.0.0.1:57883 - "GET /api/categories/1 HTTP/1.1" 200
+      INFO   127.0.0.1:57886 - "POST /api/products HTTP/1.1" 201
+      INFO   127.0.0.1:57889 - "POST /api/products HTTP/1.1" 201
+      INFO   127.0.0.1:57889 - "GET /api/products/1 HTTP/1.1" 200
+      INFO   127.0.0.1:57892 - "POST /api/products HTTP/1.1" 201
+      INFO   127.0.0.1:57892 - "POST /api/products/1/skus HTTP/1.1" 201
+      INFO   127.0.0.1:57895 - "POST /api/products HTTP/1.1" 201
+      INFO   127.0.0.1:57895 - "POST /api/products/1/skus HTTP/1.1" 201
+      INFO   127.0.0.1:57895 - "GET /api/skus/1 HTTP/1.1" 200
+
+      INFO   Shutting down
+      INFO   Waiting for application shutdown.
+      INFO   Application shutdown complete.
+      INFO   Finished server process [97722]

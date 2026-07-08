@@ -1,4 +1,4 @@
-.PHONY: dev debug testdb test
+.PHONY: dev debug testdb test test-unit test-integration test-e2e test-smoke
 
 dev:
 	uv run --package web-service fastapi dev apps/web-service/app/main.py --port 8080
@@ -19,4 +19,16 @@ db-downgrade:
 	PYTHONPATH=apps/web-service uv run --package web-service alembic -c apps/web-service/alembic.ini downgrade $(version)
 
 test:
-	uv run pytest apps/web-service/test/integration/ -v
+	uv run pytest apps/web-service/test/unit/ apps/web-service/test/integration/ -q --cov=app --cov-report=term-missing --cov-fail-under=80
+
+test-unit:
+	uv run pytest apps/web-service/test/unit/ -q
+
+test-integration:
+	uv run pytest apps/web-service/test/integration/ -q
+
+test-e2e:
+	uv run pytest apps/web-service/test/e2e/ -q
+
+test-smoke:
+	uv run pytest apps/web-service/test/unit/ apps/web-service/test/integration/ apps/web-service/test/e2e/ -q -m smoke
