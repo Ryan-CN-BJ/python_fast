@@ -19,16 +19,22 @@ db-downgrade:
 	PYTHONPATH=apps/web-service uv run --package web-service alembic -c apps/web-service/alembic.ini downgrade $(version)
 
 test:
-	uv run pytest apps/web-service/test/unit/ apps/web-service/test/integration/ -q --cov=app --cov-report=term-missing --cov-fail-under=80
+	COVERAGE_FILE=.coverage.duyi \
+	  uv run pytest packages/duyi-utils/test/ -q \
+	    --cov=duyi_utils --cov-report=html:htmlcov/duyi-utils --cov-fail-under=80 && \
+	COVERAGE_FILE=.coverage.web \
+	  uv run pytest apps/web-service/test/unit/ apps/web-service/test/integration/ -q \
+	    --cov=app --cov-report=html:htmlcov/web-service --cov-fail-under=80
 
 test-unit:
-	uv run pytest apps/web-service/test/unit/ -q
+	uv run pytest packages/duyi-utils/test/unit/ apps/web-service/test/unit/ -q
 
 test-integration:
-	uv run pytest apps/web-service/test/integration/ -q
+	uv run pytest packages/duyi-utils/test/integration/ apps/web-service/test/integration/ -q
 
 test-e2e:
 	uv run pytest apps/web-service/test/e2e/ -q
 
 test-smoke:
-	uv run pytest apps/web-service/test/unit/ apps/web-service/test/integration/ apps/web-service/test/e2e/ -q -m smoke
+	uv run pytest apps/web-service/test/e2e/ -q -m smoke
+	uv run pytest packages/duyi-utils/test/ apps/web-service/test/unit/ apps/web-service/test/integration/ -q -m smoke

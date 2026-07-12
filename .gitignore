@@ -11,7 +11,11 @@ wheels/
 
 # Virtual environments
 .venv
-# .env
 
+
+.env 
+.env.test
+ 
 .coverage
+.coverage.*
 htmlcov/

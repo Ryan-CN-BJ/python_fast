@@ -1,18 +1,18 @@
 from pydantic_settings import BaseSettings
 
 
-class _BaseSettingsWithEnv(BaseSettings):
+class BaseSettingsWithEnv(BaseSettings):
     # 配置读取方式
     model_config = {"env_file": ".env", "extra": "ignore"}  # env文件的位置
 
 
 # 通用配置
-class _CommonSettings(_BaseSettingsWithEnv):
+class CommonSettings(BaseSettingsWithEnv):
     environment: str = "development"
 
 
 # web服务配置
-class _WebSettings(_BaseSettingsWithEnv):
+class WebSettings(BaseSettingsWithEnv):
     app_name: str = "Web Service API"  # 实际读取 WEB_APP_NAME
     cors_origins: str = ""
     cors_expose_headers: str = ""
@@ -22,7 +22,7 @@ class _WebSettings(_BaseSettingsWithEnv):
 
 
 # 数据库配置
-class _DBSettings(_BaseSettingsWithEnv):
+class DBSettings(BaseSettingsWithEnv):
     host: str = ""
     port: str = ""
     name: str = ""
@@ -32,6 +32,6 @@ class _DBSettings(_BaseSettingsWithEnv):
     model_config = {"env_prefix": "DB_"}
 
 
-common_settings = _CommonSettings()
-web_settings = _WebSettings()
-db_settings = _DBSettings()
+common_settings = CommonSettings()
+web_settings = WebSettings()
+db_settings = DBSettings()
