@@ -41,6 +41,20 @@ def get_session_factory() -> async_sessionmaker[AsyncSession]:
     return _session_factory
 
 
+# async def get_db() -> AsyncGenerator[AsyncSession]:
+#     async with get_session_factory().begin() as session:
+#         yield session
+
+
 async def get_db() -> AsyncGenerator[AsyncSession]:
-    async with get_session_factory().begin() as session:
+    session = get_session_factory()()
+    await session.begin()
+    try:
         yield session
+    except:
+        await session.rollback()
+        raise
+    else:
+        await session.commit()
+    finally:
+        session.close()
