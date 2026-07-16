@@ -1,0 +1,359 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 2,
+    "total": 2,
+    "workspacePrefix": "/Users/maorunjie/project/service-demo"
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "duyi-service",
+      "private": true,
+      "packageManager": "pnpm@10.15.1",
+      "engines": {
+        "node": ">=22"
+      },
+      "scripts": {
+        "dev:upload": "pnpm --filter upload-demo dev",
+        "build:upload": "pnpm --filter upload-demo build",
+        "preview:upload": "pnpm --filter upload-demo preview"
+      }
+    },
+    "prefix": "/Users/maorunjie/project/service-demo"
+  },
+  "2 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "upload-demo",
+      "private": true,
+      "version": "0.0.0",
+      "type": "module",
+      "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "lint": "oxlint",
+        "preview": "vite preview"
+      },
+      "dependencies": {
+        "@ant-design/icons": "^6.3.1",
+        "antd": "^6.4.5",
+        "react": "^19.2.7",
+        "react-dom": "^19.2.7"
+      },
+      "devDependencies": {
+        "@types/node": "^24.13.2",
+        "@types/react": "^19.2.17",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^6.0.2",
+        "oxlint": "^1.69.0",
+        "typescript": "~6.0.2",
+        "vite": "^8.1.0"
+      }
+    },
+    "prefix": "/Users/maorunjie/project/service-demo/demo/upload-demo"
+  },
+  "3 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/Users/maorunjie/.pnpm-store/v3",
+    "virtualStoreDir": "/Users/maorunjie/project/service-demo/node_modules/.pnpm"
+  },
+  "4 debug pnpm:stage": {
+    "prefix": "/Users/maorunjie/project/service-demo",
+    "stage": "resolution_started"
+  },
+  "5 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "message": "request to https://registry.npmjs.org/vite failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/vite"
+  },
+  "6 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "message": "request to https://registry.npmjs.org/@types%2Freact-dom failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/@types%2Freact-dom"
+  },
+  "7 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "message": "request to https://registry.npmjs.org/@ant-design%2Ficons failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/@ant-design%2Ficons"
+  },
+  "8 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "message": "request to https://registry.npmjs.org/@vitejs%2Fplugin-react failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/@vitejs%2Fplugin-react"
+  },
+  "9 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "message": "request to https://registry.npmjs.org/antd failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/antd"
+  },
+  "10 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "message": "request to https://registry.npmjs.org/oxlint failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/oxlint"
+  },
+  "11 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "message": "request to https://registry.npmjs.org/@types%2Fnode failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/@types%2Fnode"
+  },
+  "12 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "message": "request to https://registry.npmjs.org/react failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/react"
+  },
+  "13 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "message": "request to https://registry.npmjs.org/typescript failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/typescript"
+  },
+  "14 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "message": "request to https://registry.npmjs.org/@types%2Freact failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/@types%2Freact"
+  },
+  "15 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "message": "request to https://registry.npmjs.org/react-dom failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/react-dom"
+  },
+  "16 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "message": "request to https://registry.npmjs.org/vite failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/vite"
+  },
+  "17 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "message": "request to https://registry.npmjs.org/@types%2Freact-dom failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/@types%2Freact-dom"
+  },
+  "18 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "message": "request to https://registry.npmjs.org/@ant-design%2Ficons failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/@ant-design%2Ficons"
+  },
+  "19 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "message": "request to https://registry.npmjs.org/antd failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/antd"
+  },
+  "20 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "message": "request to https://registry.npmjs.org/oxlint failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/oxlint"
+  },
+  "21 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "message": "request to https://registry.npmjs.org/@types%2Fnode failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/@types%2Fnode"
+  },
+  "22 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "message": "request to https://registry.npmjs.org/@vitejs%2Fplugin-react failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/@vitejs%2Fplugin-react"
+  },
+  "23 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "message": "request to https://registry.npmjs.org/react failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/react"
+  },
+  "24 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "message": "request to https://registry.npmjs.org/react-dom failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/react-dom"
+  },
+  "25 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "message": "request to https://registry.npmjs.org/@types%2Freact failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/@types%2Freact"
+  },
+  "26 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "message": "request to https://registry.npmjs.org/typescript failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "type": "system",
+      "errno": "ECONNRESET",
+      "code": "ECONNRESET"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/typescript"
+  },
+  "27 error pnpm": {
+    "code": "ERR_PNPM_META_FETCH_FAIL",
+    "attempts": 1,
+    "pkgsStack": [],
+    "err": {
+      "name": "Error",
+      "message": "GET https://registry.npmjs.org/vite: request to https://registry.npmjs.org/vite failed, reason: Client network socket disconnected before secure TLS connection was established",
+      "code": "ERR_PNPM_META_FETCH_FAIL",
+      "stack": "Error: GET https://registry.npmjs.org/vite: request to https://registry.npmjs.org/vite failed, reason: Client network socket disconnected before secure TLS connection was established\n    at RetryOperation._fn (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:79065:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)"
+    }
+  }
+}
