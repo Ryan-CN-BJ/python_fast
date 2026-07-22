@@ -1,5 +1,6 @@
-from app.model.category import Category
-from app.model.product import Product
-from app.model.sku import Sku
-from app.model.setting import Setting
-from app.model.setting_group import SettingGroup
+from app.model import product  # noqa
+from app.model import category  # noqa
+from app.model import sku  # noqa
+from app.model import setting_group  # noqa
+from app.model import setting  # noqa
+from app.model import user  # noqa
