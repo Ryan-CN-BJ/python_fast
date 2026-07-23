@@ -9,7 +9,10 @@ from app.exception.not_found import NotFoundException
 async def unified_response(request: Request, call_next):
     response = await call_next(request)
 
-    if not request.url.path.startswith("/api/"):
+    if (
+        not request.url.path.startswith("/api/")
+        or getattr(request.state, "exception_handled") is True
+    ):
         return response
 
     body = b""
