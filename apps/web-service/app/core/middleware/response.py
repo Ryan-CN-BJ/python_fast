@@ -3,15 +3,11 @@ import json
 from fastapi import Request
 from fastapi.responses import JSONResponse
 
-from app.exception.not_found import NotFoundException
-
 
 async def unified_response(request: Request, call_next):
     response = await call_next(request)
-
-    if (
-        not request.url.path.startswith("/api/")
-        or getattr(request.state, "exception_handled") is True
+    if not request.url.path.startswith("/api/") or getattr(
+        request.state, "exception_handled", False
     ):
         return response
 
@@ -31,4 +27,4 @@ async def unified_response(request: Request, call_next):
     )
 
 
-MIDDLEWARE = (unified_response, {})
+MIDDLEWARE: tuple[object, dict[str, object]] = (unified_response, {})
